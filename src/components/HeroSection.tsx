@@ -8,7 +8,7 @@ export function HeroSection() {
     'Web Developer',
     'UI/UX Designer',
     'CEO & Founder',
-    'Chief Technology Officer',
+    'Chief Product Officer',
     'Braintrust-Approved Talent',
     'Web Designer',
   ];

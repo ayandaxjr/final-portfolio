@@ -125,14 +125,18 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative"
     >
-      <a 
-        href={project.link} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className={`block relative overflow-hidden rounded-2xl ${large ? 'h-[500px]' : 'h-[300px]'} bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#005BFF]/50 transition-all duration-500 cursor-pointer`}
-      >
+      <div className={`relative overflow-hidden rounded-2xl ${large ? 'h-[500px]' : 'h-[300px]'} bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#005BFF]/50 transition-all duration-500 cursor-pointer`}>
+        {/* Clickable Overlay - covers entire card */}
+        <a 
+          href={project.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="absolute inset-0 z-10"
+          aria-label={`View ${project.title} project`}
+        />
+        
         {/* Project Image */}
-        <div className="relative h-full overflow-hidden">
+        <div className="relative h-full overflow-hidden pointer-events-none">
           <ImageWithFallback
             src={project.image}
             alt={project.title}
@@ -144,7 +148,7 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
         </div>
 
         {/* Content */}
-        <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end">
+        <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end pointer-events-none">
           <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
             {/* Category Badge */}
             <div className="inline-block mb-3 px-3 py-1 bg-[#005BFF]/30 backdrop-blur-sm border border-[#005BFF]/50 rounded-full">
@@ -174,7 +178,7 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
           <div className="absolute inset-0 rounded-2xl border-2 border-[#005BFF]/50" />
           <div className="absolute -inset-1 bg-gradient-to-r from-[#005BFF] to-[#CBA135] rounded-2xl blur-xl opacity-30 -z-10" />
         </div>
-      </a>
+      </div>
     </motion.div>
   );
 }

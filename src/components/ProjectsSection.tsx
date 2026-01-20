@@ -123,10 +123,14 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative cursor-pointer"
+      className="group relative"
     >
-      <div className={`relative overflow-hidden rounded-2xl ${large ? 'h-[500px]' : 'h-[300px]'} bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#005BFF]/50 transition-all duration-500`}>
-      <a href={project.link}></a>
+      <a 
+        href={project.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={`block relative overflow-hidden rounded-2xl ${large ? 'h-[500px]' : 'h-[300px]'} bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#005BFF]/50 transition-all duration-500 cursor-pointer`}
+      >
         {/* Project Image */}
         <div className="relative h-full overflow-hidden">
           <ImageWithFallback
@@ -158,8 +162,8 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
             </p>
 
             {/* Link Icon */}
-            <div className="flex items-center gap-2 text-[#CBA135] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <a className="text-sm" href={project.link}>View Project</a>
+            <div className="flex items-center gap-2 text-[#CBA135]">
+              <span className="text-sm">View Project</span>
               <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </div>
           </div>
@@ -170,7 +174,7 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
           <div className="absolute inset-0 rounded-2xl border-2 border-[#005BFF]/50" />
           <div className="absolute -inset-1 bg-gradient-to-r from-[#005BFF] to-[#CBA135] rounded-2xl blur-xl opacity-30 -z-10" />
         </div>
-      </div>
+      </a>
     </motion.div>
   );
 }

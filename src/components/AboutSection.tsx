@@ -87,7 +87,7 @@ export function AboutSection() {
               <p className="text-lg md:text-xl text-white/80 leading-relaxed">
                 <span className="text-[#005BFF] font-semibold">Ayanda Vilakazi</span> is a multidisciplinary product builder and Founder of 
                 <span className="text-[#CBA135]"> Vilatech</span>. He builds high-performance digital systems, premium websites, 
-                apps, AI-powered tools, and brand experiences.
+                apps, AI-powered tools, and brand experiences. 
               </p>
               
               <p className="text-lg md:text-xl text-white/80 leading-relaxed">

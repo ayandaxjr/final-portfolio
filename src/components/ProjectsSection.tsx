@@ -18,11 +18,11 @@ export function ProjectsSection() {
   const projects: Project[] = [
     {
       id: '1',
-      title: 'Lama Marketing',
-      description: 'A performance-first marketing agency website & system.',
-      category: 'Marketing',
-      image: 'images/LAMA MARKETING.png',
-      link: 'https://www.lamamarketing.co.za/',
+      title: 'VILATECH',
+      description: 'Vilatech is a digital growth agency, an approved Framer Expert Agency & an approved Braintrust talent, building high-performance websites, AI-powered solutions, and conversion-focused experiences',
+      category: 'Software Development',
+      image: 'images/VILATECH LOGO.jpg',
+      link: 'https://vilatech.co/',
       featured: true,
     },
     {

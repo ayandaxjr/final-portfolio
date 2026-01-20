@@ -126,6 +126,7 @@ function ProjectCard({ project, index, large = false }: { project: Project; inde
       className="group relative cursor-pointer"
     >
       <div className={`relative overflow-hidden rounded-2xl ${large ? 'h-[500px]' : 'h-[300px]'} bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#005BFF]/50 transition-all duration-500`}>
+      <a href={project.link}></a>
         {/* Project Image */}
         <div className="relative h-full overflow-hidden">
           <ImageWithFallback
